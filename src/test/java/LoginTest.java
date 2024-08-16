@@ -1,14 +1,17 @@
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 public class LoginTest extends BaseTest {
 
 
     @Test
     public void successLogin(){
-
+        sleep(3000);
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
+        sleep(3000);
 
     }
 
@@ -25,6 +28,14 @@ public class LoginTest extends BaseTest {
 
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty");
+        loginPage.followLoginButton();
+    }
+
+    @Test
+    public void emptyFields(){
+
+        loginPage.enterEmail("");
+        loginPage.enterPassword("");
         loginPage.followLoginButton();
     }
 }
