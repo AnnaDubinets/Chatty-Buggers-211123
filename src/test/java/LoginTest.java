@@ -38,4 +38,11 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("");
         loginPage.followLoginButton();
     }
+    @Test
+    public void invalidUsernameTwoSymbols(){
+
+        loginPage.enterEmail("jo");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+    }
 }
