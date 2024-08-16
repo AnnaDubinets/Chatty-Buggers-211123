@@ -45,4 +45,13 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
     }
+
+    @Test
+    public void invalidUsernameMore20Symbols(){
+
+
+        loginPage.enterEmail("johnsmithjohnsmithjohnsmithjohnsmith");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+    }
 }
