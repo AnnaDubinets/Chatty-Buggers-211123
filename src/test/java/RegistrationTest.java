@@ -37,6 +37,7 @@ public class RegistrationTest extends BaseTest {
         sleep(5000);
         profilePage.chooseButtonClick();
         profilePage.clickOnAdminPanel();
+        profilePage.checkUsersList("Users list");
 
     }
 }

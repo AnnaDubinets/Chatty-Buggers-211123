@@ -3,8 +3,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.enabled;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationPage {
@@ -20,6 +19,8 @@ public class RegistrationPage {
 
 
     private SelenideElement selectButton = $("select");
+
+
 
 
 
@@ -45,6 +46,8 @@ public class RegistrationPage {
         selectButton.shouldBe(visible).click();
         adminButton.shouldBe(visible).click();
     }
+
+
 
 }
 
