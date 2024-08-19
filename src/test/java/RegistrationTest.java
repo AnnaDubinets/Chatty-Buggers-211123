@@ -35,8 +35,8 @@ public class RegistrationTest extends BaseTest {
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
         sleep(5000);
-        registrationPage.clickOnChooseButton();
-        registrationPage.followAdminPanel();
+        profilePage.chooseButtonClick();
+        profilePage.clickOnAdminPanel();
 
     }
 }

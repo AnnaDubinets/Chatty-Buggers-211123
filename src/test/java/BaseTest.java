@@ -36,4 +36,6 @@ public class BaseTest {
     LoginPage loginPage = new LoginPage();
 
     RegistrationPage registrationPage = new RegistrationPage();
+
+    ProfilePage profilePage = new ProfilePage();
 }
