@@ -6,24 +6,26 @@ public class RegistrationTest extends BaseTest {
 
     @Test
     public void successRegistrationByAdmin(){
-
+        sleep(3000);
         loginPage.followSignUpLink();
+
         registrationPage.enterEmailValue("susan97@gmail.com");
-        registrationPage.enterPasswordValue("susan97");
-        registrationPage.enterConfirmPasswordValue("susan97");
+        registrationPage.enterPasswordValue("susan970");
+        registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.selectAdminRoleByClick();
         registrationPage.clickOnRegistrationButton();
 
-    }
 
+
+    }
 
     @Test
     public void successRegistrationByUser(){
 
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("susan97@gmail.com");
-        registrationPage.enterPasswordValue("susan97");
-        registrationPage.enterConfirmPasswordValue("susan97");
+        registrationPage.enterPasswordValue("susan970");
+        registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.clickOnRegistrationButton();
 
     }
