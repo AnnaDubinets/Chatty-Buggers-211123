@@ -69,4 +69,17 @@ public class PostTest extends BaseTest{
         postPage.postImageIsDisplayed();
 
     }
+
+    @Test
+    public void CreatePostOnlyWithTitle (){
+
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.clickOnCreateButton();
+        postPage.enterTitlePost("Cats&Dogs");
+        postPage.clickOnSubmitButton();
+
+
+    }
 }
