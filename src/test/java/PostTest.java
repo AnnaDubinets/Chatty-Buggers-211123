@@ -60,4 +60,13 @@ public class PostTest extends BaseTest{
                 "Cat and Dog may not like each other in the beginning of the story and prefer to be alone, but all pets need love. Talk about how to care for pets and how we can show our pets we love them. For example");
         postPage.clickOnSubmitButton();
     }
+    @Test
+    public void randomImageIsDisplayed() {
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.followPost();
+        postPage.postImageIsDisplayed();
+
+    }
 }
