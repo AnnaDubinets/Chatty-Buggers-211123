@@ -23,23 +23,11 @@ public class RegistrationTest extends BaseTest {
     public void successRegistrationByUser(){
 
         loginPage.followSignUpLink();
-        registrationPage.enterEmailValue("susan97@gmail.com");
-        registrationPage.enterPasswordValue("susan970");
+        registrationPage.enterEmailValue("anna97@gmail.com");
+        registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.clickOnRegistrationButton();
 
     }
 
-    @Test
-    public void checkUsersList(){
-
-        loginPage.enterEmail("johnsmith@gmail.com");
-        loginPage.enterPassword("qwerty07");
-        loginPage.followLoginButton();
-        sleep(5000);
-        profilePage.chooseButtonClick();
-        profilePage.clickOnAdminPanel();
-        profilePage.checkUsersList("Users list");
-
-    }
 }

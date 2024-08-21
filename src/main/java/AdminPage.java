@@ -3,9 +3,8 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
-public class ProfilePage {
-
-    private SelenideElement chooseButton = $("//*[@id=\"root\"]/div[1]/div/div/div[2]/p");
+public class AdminPage {
+    private SelenideElement chooseButton = $("[class=\"dropdown-menu\"]");
 
     private SelenideElement adminPanelButton = $("[href=\"/users\"]");
 

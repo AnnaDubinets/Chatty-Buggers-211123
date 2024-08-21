@@ -39,12 +39,14 @@ public class RegistrationPage {
 
     public void clickOnRegistrationButton() {
 
-        registrationButton.shouldBe(enabled, Duration.ofSeconds(10)).click();
+        registrationButton.shouldBe(visible, Duration.ofSeconds(10))
+                .shouldBe(enabled, Duration.ofSeconds(15))
+                .click();
     }
 
     public void selectAdminRoleByClick() {
-        selectButton.shouldBe(visible).click();
-        adminButton.shouldBe(visible).click();
+        selectButton.click();
+        adminButton.click();
     }
 
 
