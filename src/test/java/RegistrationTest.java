@@ -73,10 +73,20 @@ public class RegistrationTest extends BaseTest {
     public void invalidUsernameLessThanThree(){
 
         loginPage.followSignUpLink();
-        registrationPage.enterEmailValue("ann");
+        registrationPage.enterEmailValue("an");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.clickOnRegistrationButton();
 
+    }
+
+    @Test
+    public void invalidUserNameMore20(){
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("annaanna970annaanna970annaanna970");
+        registrationPage.errorTextInvalidEmail("Incorrect email format");
+        registrationPage.enterPasswordValue("annaanna970");
+        registrationPage.enterConfirmPasswordValue("annaanna970");
+        registrationPage.clickOnRegistrationButton();
     }
 }

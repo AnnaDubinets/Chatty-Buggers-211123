@@ -20,6 +20,8 @@ public class RegistrationPage {
 
     private SelenideElement selectButton = $("select");
 
+    private SelenideElement emailErrorText = $("[class=\"text-error\"]");
+
 
 
 
@@ -47,6 +49,10 @@ public class RegistrationPage {
     public void selectAdminRoleByClick() {
         selectButton.click();
         adminButton.click();
+    }
+
+    public void errorTextInvalidEmail(String expectedText){
+        emailErrorText.shouldHave(text(expectedText));
     }
 
 
