@@ -14,6 +14,9 @@ public class PostPage {
 
     private SelenideElement submitButton = $("[data-test=\"submit\"]");
 
+    private SelenideElement postPhoto = $("[class=\"post-photo\"]");
+    private SelenideElement postTitleLink = $("#root > div.home-blog.home-page > div.posts > div.container > div > div:nth-child(1) > div.post-content > div.post-content__top > h3");
+
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -32,6 +35,14 @@ public class PostPage {
 
     public void clickOnSubmitButton(){
         submitButton.click();
+    }
+
+    public void postImageIsDisplayed(){
+        postPhoto.isDisplayed();
+    }
+
+    public void followPost(){
+        postTitleLink.click();
     }
 
 }

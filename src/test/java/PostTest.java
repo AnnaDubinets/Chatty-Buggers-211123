@@ -1,9 +1,9 @@
 import org.junit.jupiter.api.Test;
 
-public class PostTest extends BaseTest{
+public class PostTest extends BaseTest {
 
     @Test
-    public void successCreatePost(){
+    public void successCreatePost() {
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
@@ -12,6 +12,16 @@ public class PostTest extends BaseTest{
         postPage.enterDescriptionPost("Summer is upon us! like this month’s book selection, A Cat and a Dog, written by Claire Masurel;");
         postPage.enterContentPost("Talk about cats and dogs! Before reading the story, Ask your child, “What do you see on the cover?”Have a conversation with your child about how cats and dogs are different and what traits they have in common. For example:");
         postPage.clickOnSubmitButton();
+
+    }
+
+    @Test
+    public void randomImageIsDisplayed() {
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.followPost();
+        postPage.postImageIsDisplayed();
 
     }
 }
