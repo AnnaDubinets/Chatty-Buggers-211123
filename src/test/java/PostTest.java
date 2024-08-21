@@ -70,6 +70,19 @@ public class PostTest extends BaseTest{
 
     }
 
+    //should fail
+    @Test
+    public void invalidPostTitleMoreThan40(){
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.clickOnCreateButton();
+        sleep(3000);
+        postPage.enterTitlePost("Talk about cats and dogs! Before reading the story, Ask your child, “What do you see on the cover?”Have a conversation with your child about how cats and dogs are different and what traits they have in common");
+        sleep(3000);
+        postPage.clickOnSubmitButton();
+    }
+
     @Test
     public void CreatePostOnlyWithTitle (){
 
@@ -81,5 +94,18 @@ public class PostTest extends BaseTest{
         postPage.clickOnSubmitButton();
 
 
+    }
+
+    @Test
+    public void emptyPostTitle(){
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.clickOnCreateButton();
+        sleep(3000);
+        postPage.enterTitlePost("");
+        sleep(3000);
+        postPage.clickOnSubmitButton();
+        sleep(3000);
     }
 }
