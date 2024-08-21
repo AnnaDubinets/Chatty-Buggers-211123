@@ -101,5 +101,14 @@ public class RegistrationTest extends BaseTest {
 
 
     }
+    @Test
+    public void alreadyUsedUsername() {
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("anna97@gmail.com");
+        registrationPage.enterPasswordValue("susan970");
+        registrationPage.enterConfirmPasswordValue("susan970");
+        registrationPage.clickOnRegistrationButton();
 
+    }
 }
+
