@@ -9,7 +9,7 @@ public class RegistrationTest extends BaseTest {
         sleep(3000);
         loginPage.followSignUpLink();
 
-        registrationPage.enterEmailValue("susan97@gmail.com");
+        registrationPage.enterEmailValue("susan970@gmail.com");
         registrationPage.enterPasswordValue("susan970");
         registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.selectAdminRoleByClick();
