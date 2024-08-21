@@ -26,7 +26,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void invalidPassword(){
-
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty");
         loginPage.followLoginButton();
@@ -34,14 +33,12 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void emptyFields(){
-
         loginPage.enterEmail("");
         loginPage.enterPassword("");
         loginPage.followLoginButton();
     }
     @Test
     public void invalidUsernameTwoSymbols(){
-
         loginPage.enterEmail("jo");
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();

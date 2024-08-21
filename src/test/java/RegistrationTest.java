@@ -48,4 +48,25 @@ public class RegistrationTest extends BaseTest {
         registrationPage.clickOnRegistrationButton();
     }
 
+    @Test
+    public void invalidPasswordLessThanEight(){
+
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("anna78@gmail.com");
+        registrationPage.enterPasswordValue("an970");
+        registrationPage.enterConfirmPasswordValue("an970");
+        registrationPage.clickOnRegistrationButton();
+
+    }
+    @Test
+    public void emptyPassword(){
+
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("anna78@gmail.com");
+        registrationPage.enterPasswordValue("");
+        registrationPage.enterConfirmPasswordValue("an970");
+        registrationPage.clickOnRegistrationButton();
+
+    }
+
 }
