@@ -38,4 +38,6 @@ public class BaseTest {
     RegistrationPage registrationPage = new RegistrationPage();
 
     AdminPage adminPage = new AdminPage();
+
+    PostPage postPage = new PostPage();
 }
