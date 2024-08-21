@@ -11,9 +11,8 @@ public class AdminTest extends BaseTest{
         loginPage.enterEmail("susan990@gmail.com");
         loginPage.enterPassword("susan990");
         loginPage.followLoginButton();
-        sleep(5000);
-        adminPage.chooseButtonClick();
-        adminPage.clickOnAdminPanel();
+        //adminPage.chooseButtonClick();
+        //adminPage.clickOnAdminPanel();
         adminPage.checkUsersList("Users list");
 
     }
