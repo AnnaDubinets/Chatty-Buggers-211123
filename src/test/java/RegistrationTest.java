@@ -69,4 +69,14 @@ public class RegistrationTest extends BaseTest {
 
     }
 
+    @Test
+    public void invalidUsernameLessThanThree(){
+
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("ann");
+        registrationPage.enterPasswordValue("annaanna970");
+        registrationPage.enterConfirmPasswordValue("annaanna970");
+        registrationPage.clickOnRegistrationButton();
+
+    }
 }
