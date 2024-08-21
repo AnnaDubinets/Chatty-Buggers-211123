@@ -89,4 +89,17 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.clickOnRegistrationButton();
     }
+
+    @Test
+    public void invalidConfirmPassword() {
+
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("susan970@gmail.com");
+        registrationPage.enterPasswordValue("susan970");
+        registrationPage.enterConfirmPasswordValue("mn");
+        registrationPage.clickOnRegistrationButton();
+
+
+    }
+
 }
