@@ -25,9 +25,27 @@ public class RegistrationTest extends BaseTest {
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("anna97@gmail.com");
         registrationPage.enterPasswordValue("annaanna970");
-        registrationPage.enterConfirmPasswordValue("susan970");
+        registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.clickOnRegistrationButton();
 
+    }
+
+    @Test
+    public void invalidEmail(){
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("anna97");
+        registrationPage.enterPasswordValue("annaanna970");
+        registrationPage.enterConfirmPasswordValue("susan970");
+        registrationPage.clickOnRegistrationButton();
+    }
+
+    @Test
+    public void emptyEmail(){
+        loginPage.followSignUpLink();
+        registrationPage.enterEmailValue("");
+        registrationPage.enterPasswordValue("annaanna970");
+        registrationPage.enterConfirmPasswordValue("annaanna970");
+        registrationPage.clickOnRegistrationButton();
     }
 
 }
