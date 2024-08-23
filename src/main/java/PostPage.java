@@ -1,5 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class PostPage {
@@ -17,6 +18,7 @@ public class PostPage {
     private SelenideElement postPhoto = $("[class=\"post-photo\"]");
     private SelenideElement postTitleLink = $("#root > div.home-blog.home-page > div.posts > div.container > div > div:nth-child(1) > div.post-content > div.post-content__top > h3");
 
+    private SelenideElement userHeader = $("[class=\"header__user header__menu\"]");
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -43,6 +45,9 @@ public class PostPage {
 
     public void followPost(){
         postTitleLink.click();
+    }
+    public void userHeaderText(String expectedText){
+        userHeader.shouldHave(text(expectedText));
     }
 
 }

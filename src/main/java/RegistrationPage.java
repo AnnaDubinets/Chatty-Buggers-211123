@@ -26,6 +26,7 @@ public class RegistrationPage {
 
 
 
+
     public void enterEmailValue(String emailValue) {
         emailInput.setValue(emailValue);
     }

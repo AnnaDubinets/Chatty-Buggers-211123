@@ -14,7 +14,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.selectAdminRoleByClick();
         registrationPage.clickOnRegistrationButton();
-
+        postPage.userHeaderText("Hello, susan15! ▼");
 
 
     }
