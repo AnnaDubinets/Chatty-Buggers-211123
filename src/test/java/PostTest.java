@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class PostTest extends BaseTest{
@@ -81,6 +83,7 @@ public class PostTest extends BaseTest{
         postPage.enterTitlePost("Talk about cats and dogs! Before reading the story, Ask your child, “What do you see on the cover?”Have a conversation with your child about how cats and dogs are different and what traits they have in common");
         sleep(3000);
         postPage.clickOnSubmitButton();
+        postPage.titleErrorMessage("Please fill the field");
     }
 
     @Test
@@ -107,5 +110,6 @@ public class PostTest extends BaseTest{
         sleep(3000);
         postPage.clickOnSubmitButton();
         sleep(3000);
+        postPage.errorMessagesTextsCheck(Arrays.asList("Please fill the field","Please fill the field", "Please fill the field", "Please fill all fields"));
     }
 }

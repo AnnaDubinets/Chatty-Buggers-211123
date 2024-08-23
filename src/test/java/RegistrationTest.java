@@ -8,7 +8,6 @@ public class RegistrationTest extends BaseTest {
     public void successRegistrationByAdmin(){
         sleep(3000);
         loginPage.followSignUpLink();
-
         registrationPage.enterEmailValue("susan970@gmail.com");
         registrationPage.enterPasswordValue("susan970");
         registrationPage.enterConfirmPasswordValue("susan970");
@@ -16,12 +15,10 @@ public class RegistrationTest extends BaseTest {
         registrationPage.clickOnRegistrationButton();
         postPage.userHeaderText("Hello, susan15! ▼");
 
-
     }
 
     @Test
     public void successRegistrationByUser(){
-
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("anna97@gmail.com");
         registrationPage.enterPasswordValue("annaanna970");
