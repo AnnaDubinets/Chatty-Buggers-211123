@@ -20,10 +20,11 @@ public class RegistrationTest extends BaseTest {
     @Test
     public void successRegistrationByUser(){
         loginPage.followSignUpLink();
-        registrationPage.enterEmailValue("anna97@gmail.com");
+        registrationPage.enterEmailValue("anna57@gmail.com");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.clickOnRegistrationButton();
+        postPage.userHeaderText("Hello, anna57! ▼");
 
     }
 
@@ -33,7 +34,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("anna97");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("susan970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Incorrect email format");
     }
 
     @Test
@@ -42,7 +44,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Email cannot be empty");
     }
 
     @Test
@@ -52,7 +55,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("anna78@gmail.com");
         registrationPage.enterPasswordValue("an970");
         registrationPage.enterConfirmPasswordValue("an970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Password must be 8-100 characters and include at least one letter and one digit");
 
     }
     @Test
@@ -62,7 +66,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("anna78@gmail.com");
         registrationPage.enterPasswordValue("");
         registrationPage.enterConfirmPasswordValue("an970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Password cannot be empty");
 
     }
 
@@ -73,7 +78,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("an");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Incorrect email format");
 
     }
 
@@ -81,10 +87,10 @@ public class RegistrationTest extends BaseTest {
     public void invalidUserNameMore20(){
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("annaanna970annaanna970annaanna970");
-        registrationPage.errorTextInvalidEmail("Incorrect email format");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Incorrect email format");
     }
 
     @Test
@@ -94,7 +100,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("susan970@gmail.com");
         registrationPage.enterPasswordValue("susan970");
         registrationPage.enterConfirmPasswordValue("mn");
-        registrationPage.clickOnRegistrationButton();
+        //registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Passwords do not match");
 
 
     }
@@ -105,6 +112,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterPasswordValue("susan970");
         registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.clickOnRegistrationButton();
+        registrationPage.errorText("Email already exists!");
 
     }
 }

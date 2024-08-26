@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
@@ -52,7 +51,7 @@ public class RegistrationPage {
         adminButton.click();
     }
 
-    public void errorTextInvalidEmail(String expectedText){
+    public void errorText(String expectedText){
         emailErrorText.shouldHave(text(expectedText));
     }
 
