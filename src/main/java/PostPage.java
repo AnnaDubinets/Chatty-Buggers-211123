@@ -1,6 +1,7 @@
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.io.File;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
@@ -39,6 +40,10 @@ public class PostPage {
     private ElementsCollection postsPhotos = $$("[class=\"post-photo\"]");
     private ElementsCollection postsTitles = $$("[class=\"post-content__top\"]");
     private ElementsCollection postsDescriptions = $$("[class=\"post__description\"]");
+
+    private SelenideElement uploadImage = $("[class=\"post_uploaded_image__7qSWV\"]");
+
+    private SelenideElement errorTextCreatePost = $("[class=\"error\"]");
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -118,6 +123,19 @@ public class PostPage {
         for (SelenideElement postPhoto: postsPhotos){
             postPhoto.isDisplayed();
         }
+    }
+
+    public void uploadedImagePost(){
+        File invalidFile = new File("C:UsersAcerDesktop7IsB.gif");
+        uploadImage.uploadFile(invalidFile);
+    }
+
+    public void checkErrorTextCreatePost (String expectedText){
+        errorTextCreatePost.shouldHave(text(expectedText));
+    }
+
+    public void checkNewPostTitle(String expectedText){
+        postsTitles.findBy(text(expectedText));
     }
 }
 

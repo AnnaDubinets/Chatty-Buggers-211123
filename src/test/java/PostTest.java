@@ -12,10 +12,11 @@ public class PostTest extends BaseTest{
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
         postPage.clickOnCreateButton();
-        postPage.enterTitlePost("Cats&Dogs");
+        postPage.enterTitlePost("Dogs&Cats");
         postPage.enterDescriptionPost("Summer is upon us! like this month’s book selection, A Cat and a Dog, written by Claire Masurel;");
         postPage.enterContentPost("Talk about cats and dogs! Before reading the story, Ask your child, “What do you see on the cover?”Have a conversation with your child about how cats and dogs are different and what traits they have in common. For example:");
         postPage.clickOnSubmitButton();
+        postPage.checkNewPostTitle("Dogs&Cats");
 
     }
 
@@ -30,7 +31,7 @@ public class PostTest extends BaseTest{
         postPage.enterDescriptionPost("Summer is upon us! like this month’s book selection,Summer is upon us! like this month’s book selection,Summer is upon us! like this month’s book selection, A Cat and a Dog, written by Claire Masurel;");
         postPage.enterContentPost("Talk about cats and dogs! Before reading the story, Ask your child, “What do you see on the cover?”Have a conversation with your child about how cats and dogs are different and what traits they have in common. For example:");
         postPage.clickOnSubmitButton();
-        sleep(5000);
+        postPage.checkErrorTextCreatePost("Please fill all fields");
     }
 
     @Test
