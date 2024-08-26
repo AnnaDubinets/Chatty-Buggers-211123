@@ -16,7 +16,7 @@ public class LoginPage {
     private SelenideElement loginButton = $("[class=\"registration-btn\"]");
     private SelenideElement emailErrorText = $("#root > div > div > form > div:nth-child(3)");
     private SelenideElement passwordErrorText = $("#root > div > div > form > div:nth-child(5)");
-
+    private SelenideElement loginHeader = $("h1");
 
     public void enterEmail(String emailValue) {
         emailInput.setValue(emailValue);
@@ -39,6 +39,9 @@ public class LoginPage {
 
     public void wrongPasswordErrorTextCheck(String expectedText){
         passwordErrorText.shouldHave(text(expectedText));
+    }
+    public void loginHeaderCheck(String expectedText){
+        loginHeader.shouldHave(text(expectedText));
     }
 
 }

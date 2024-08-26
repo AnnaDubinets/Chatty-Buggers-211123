@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class PostTest extends BaseTest{
@@ -158,5 +159,10 @@ public class PostTest extends BaseTest{
         postPage.postsTitlesAreDisplayedCheck();
         postPage.postsDescriptionsAreDisplayedCheck();
         postPage.postsPhotosAreDisplayedCheck();
+    }
+    @Test
+    public void viewPostsWithoutAuthCheck(){
+        open("http://chatty.telran-edu.de:8089/homeblog");
+        loginPage.loginHeaderCheck("Login Form");//redirects to auth page
     }
 }
