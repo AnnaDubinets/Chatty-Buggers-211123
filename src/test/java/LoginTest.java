@@ -27,8 +27,9 @@ public class LoginTest extends BaseTest {
     @Test
     public void invalidPassword(){
         loginPage.enterEmail("johnsmith@gmail.com");
-        loginPage.enterPassword("qwerty");
+        loginPage.enterPassword("qwerty099");
         loginPage.followLoginButton();
+        sleep(8000);
     }
 
     @Test
