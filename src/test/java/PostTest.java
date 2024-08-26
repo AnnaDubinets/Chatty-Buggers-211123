@@ -112,4 +112,50 @@ public class PostTest extends BaseTest{
         sleep(3000);
         postPage.errorMessagesTextsCheck(Arrays.asList("Please fill the field","Please fill the field", "Please fill the field", "Please fill all fields"));
     }
+
+    @Test
+    public void savePostAsDraftCheck() {
+        sleep(3000);
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.clickOnCreateButton();
+        sleep(3000);
+        postPage.enterTitlePost("Good vibes");
+        postPage.enterDescriptionPost("Summer is upon us! It’s time to beat!");
+        postPage.enterContentPost("My thoughts, no more than 1000 symbols");
+        sleep(3000);
+        postPage.clickOnDraftboxButton();
+        sleep(3000);
+        postPage.clickOnSubmitButton();
+        sleep(3000);
+        postPage.clickOnMyDrafts();
+        sleep(3000);
+        draftsPage.draftPostTitleCheck("Good vibes");
+    }
+
+    @Test
+    public void viewMyPostsCheck() {
+        sleep(3000);
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        postPage.clickOnMyPostsTumbler();
+        sleep(3000);
+        postPage.postsAuthorsCheck("johnsmith");//check that the post author is the same as username
+
+    }
+
+    @Test
+    public void postPreviewCheck(){
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        sleep(3000);
+        postPage.clickOnMyPostsTumbler();
+        sleep(3000);
+        postPage.postsTitlesAreDisplayedCheck();
+        postPage.postsDescriptionsAreDisplayedCheck();
+        postPage.postsPhotosAreDisplayedCheck();
+    }
 }

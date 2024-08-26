@@ -29,6 +29,16 @@ public class PostPage {
     private SelenideElement postErrorText = $("[class=\"error\"]");
 
     private ElementsCollection postErrors  = $$("[class=\"error\"]");
+
+    private SelenideElement draftboxCheckButton = $("[ for=\"draftCheckbox\"]");
+
+    private SelenideElement myDraftsButton = $("#root > div.home-blog.home-page > div.left-side > div > div > div > div.menu > a:nth-child(2) > span");
+
+    private SelenideElement myPostsTumbler = $("[for=\"myPostsId\"]");
+    private ElementsCollection postAuthors = $$("[class=\"post-user__top\"]");
+    private ElementsCollection postsPhotos = $$("[class=\"post-photo\"]");
+    private ElementsCollection postsTitles = $$("[class=\"post-content__top\"]");
+    private ElementsCollection postsDescriptions = $$("[class=\"post__description\"]");
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -76,7 +86,39 @@ public class PostPage {
         }
     }
 
+    public void clickOnDraftboxButton(){
+        draftboxCheckButton.click();
+    }
 
+    public void clickOnMyDrafts(){
+        myDraftsButton.click();
+    }
+
+    public void clickOnMyPostsTumbler(){
+        myPostsTumbler.click();
+    }
+
+    public void postsAuthorsCheck(String expectedText){
+        for (SelenideElement postAuthor: postAuthors
+        ) {postAuthor.shouldHave(text(expectedText));
+
+        }
+    }
+    public void postsTitlesAreDisplayedCheck(){
+        for (SelenideElement postTitle: postsTitles){
+            postTitle.isDisplayed();
+        }
+    }
+    public void postsDescriptionsAreDisplayedCheck(){
+        for (SelenideElement postDescription: postsDescriptions){
+            postDescription.isDisplayed();//shouldBe(visible)
+        }
+    }
+    public void postsPhotosAreDisplayedCheck(){
+        for (SelenideElement postPhoto: postsPhotos){
+            postPhoto.isDisplayed();
+        }
+    }
 }
 
 
