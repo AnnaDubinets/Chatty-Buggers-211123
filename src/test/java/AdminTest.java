@@ -13,7 +13,8 @@ public class AdminTest extends BaseTest{
         loginPage.followLoginButton();
         //adminPage.chooseButtonClick();
         //adminPage.clickOnAdminPanel();
-        adminPage.checkUsersList("Users list");
+        adminPage.checkUser("Users list");
+        adminPage.checkUsersList();
 
     }
 }
