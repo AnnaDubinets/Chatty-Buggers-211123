@@ -154,6 +154,10 @@ public class PostPage {
         myProfileButton.click();
     }
 
+    public void checkMyPostsButton(String expectedText){
+        myPostsTumbler.shouldHave(text(expectedText));
+    }
+
 
 
 }

@@ -44,4 +44,6 @@ public class BaseTest {
     ProfilePage profilePage = new ProfilePage();
 
     HeaderPage headerPage = new HeaderPage();
+
+    ContactPage contactPage = new ContactPage();
 }
