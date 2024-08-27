@@ -45,6 +45,10 @@ public class PostPage {
 
     private SelenideElement errorTextCreatePost = $("[class=\"error\"]");
     private SelenideElement myProfileButton = $("[href=\"/userprofile\"]");
+
+    private SelenideElement errorTextFormatImage = $("[class=\"post_error_message__FQTrb\"]");
+
+
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -127,8 +131,12 @@ public class PostPage {
     }
 
     public void uploadedImagePost(){
-        File invalidFile = new File("C:UsersAcerDesktop7IsB.gif");
+        File invalidFile = new File("\"C:\\Users\\Acer\\Desktop\\7IsB.gif\"");
         uploadImage.uploadFile(invalidFile);
+    }
+
+    public void checkIncorrectFormat(String expectedText){
+        errorTextFormatImage.shouldHave(text(expectedText));
     }
 
     public void checkErrorTextCreatePost (String expectedText){
@@ -145,6 +153,8 @@ public class PostPage {
     public void clickOnMyProfile(){
         myProfileButton.click();
     }
+
+
 
 }
 
