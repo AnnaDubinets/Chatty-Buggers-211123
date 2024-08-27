@@ -41,4 +41,5 @@ public class BaseTest {
 
     PostPage postPage = new PostPage();
     DraftsPage draftsPage = new DraftsPage();
+    ProfilePage profilePage = new ProfilePage();
 }

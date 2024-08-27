@@ -44,6 +44,7 @@ public class PostPage {
     private SelenideElement uploadImage = $("[class=\"post_uploaded_image__7qSWV\"]");
 
     private SelenideElement errorTextCreatePost = $("[class=\"error\"]");
+    private SelenideElement myProfileButton = $("[href=\"/userprofile\"]");
     public void clickOnCreateButton(){
         createPostButton.click();
     }
@@ -137,6 +138,14 @@ public class PostPage {
     public void checkNewPostTitle(String expectedText){
         postsTitles.findBy(text(expectedText));
     }
+    public void clickOnUsersHeader(){
+        userHeader.click();
+    }
+
+    public void clickOnMyProfile(){
+        myProfileButton.click();
+    }
+
 }
 
 
