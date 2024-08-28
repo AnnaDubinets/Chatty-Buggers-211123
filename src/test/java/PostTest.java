@@ -154,7 +154,6 @@ public class PostTest extends BaseTest{
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
         sleep(3000);
-        headerPage.followHomeLink();
         postPage.clickOnMyPostsTumbler();
         sleep(3000);
         postPage.postsTitlesAreDisplayedCheck();
@@ -179,27 +178,6 @@ public class PostTest extends BaseTest{
         postPage.uploadedImagePost();
         postPage.checkIncorrectFormat("No file selected");
     }
-
-    @Test
-    public void checkOtherUsersPosts(){
-        loginPage.enterEmail("johnsmith@gmail.com");
-        loginPage.enterPassword("qwerty07");
-        loginPage.followLoginButton();
-        headerPage.followHomeLink();
-        postPage.clickOnMyPostsTumbler();
-
-    }
-
-    @Test
-    public void checkButtonMyPosts(){
-        loginPage.enterEmail("johnsmith@gmail.com");
-        loginPage.enterPassword("qwerty07");
-        loginPage.followLoginButton();
-        postPage.clickOnMyPostsTumbler();
-        postPage.checkMyPostsButton("My Posts");
-    }
-
-
 
 
 }

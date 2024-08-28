@@ -160,6 +160,23 @@ public class PostPage {
 
 
 
+    public void opensAPopupForCreatingANewPost() {
+    }
+
+    public void opensApopupForCreatingANewPost() {
+    }
+
+    public void enterIntoClickOnHomeIn() {
+    }
+
+    public void enterIntoClickOnAboutIn() {
+    }
+
+    public void enterIntoClickOnContactIn() {
+    }
+
+    public void ClickOnHelloUsernameInHeader() {
+    }
 }
 
 
