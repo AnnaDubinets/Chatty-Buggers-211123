@@ -154,6 +154,7 @@ public class PostTest extends BaseTest{
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
         sleep(3000);
+        headerPage.followHomeLink();
         postPage.clickOnMyPostsTumbler();
         sleep(3000);
         postPage.postsTitlesAreDisplayedCheck();
