@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static java.awt.SystemColor.text;
 
@@ -34,5 +35,8 @@ public class ContactPage {
 
     public void successSendMessage(String expectedText){
         successSend.shouldHave(Condition.text(expectedText));
+    }
+    public void successMessageIsNotDisplayed(){
+        successSend.shouldNotBe(visible);
     }
 }

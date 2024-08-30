@@ -21,6 +21,42 @@ public class ContactTest extends BaseTest{
     }
 
     @Test
+    public void contactWithInvalidContentTestMore1000(){
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        sleep(3000);
+        headerPage.followContactLink();
+        sleep(3000);
+        contactPage.enterName("John");
+        contactPage.enterEmail("johnsmith@gmail.com");
+        contactPage.messageEmail("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam q");
+        sleep(3000);
+        contactPage.clickSendMessage();
+        sleep(3000);
+        contactPage.successMessageIsNotDisplayed();//the message is not sent and there is no success message
+
+    }
+
+    @Test
+    public void contactWithInvalidContentLessThan3Symbols(){
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        sleep(3000);
+        headerPage.followContactLink();
+        contactPage.enterName("John");
+        contactPage.enterEmail("johnsmith@gmail.com");
+        contactPage.messageEmail("Yo");
+        sleep(3000);
+        contactPage.clickSendMessage();
+        sleep(3000);
+        contactPage.successMessageIsNotDisplayed();//is displayed, the message with content less than 3 is sent,it is a bug!
+
+    }
+
+
+    @Test
     public void withInvalidName(){
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty07");
