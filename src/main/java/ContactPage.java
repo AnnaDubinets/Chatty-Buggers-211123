@@ -6,7 +6,7 @@ import static java.awt.SystemColor.text;
 
 public class ContactPage {
 
-    private SelenideElement nameField = $("id=\"name\"");
+    private SelenideElement nameField = $("[id=\"name\"]");
 
     private SelenideElement emailField = $("[id=\"email\"]");
 
