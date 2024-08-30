@@ -46,4 +46,5 @@ public class BaseTest {
     HeaderPage headerPage = new HeaderPage();
 
     ContactPage contactPage = new ContactPage();
+    EditPostPage editPostPage = new EditPostPage();
 }

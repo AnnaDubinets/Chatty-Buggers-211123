@@ -179,5 +179,22 @@ public class PostTest extends BaseTest{
         postPage.checkIncorrectFormat("No file selected");
     }
 
+    @Test
+    public void deletePostTest() {
+        loginPage.enterEmail("johnsmith@gmail.com");
+        loginPage.enterPassword("qwerty07");
+        loginPage.followLoginButton();
+        sleep(3000);
+        postPage.clickOnMyPostsTumbler();
+        sleep(3000);
+        postPage.openFirstPost();
+        editPostPage.clickOnDeleteButton();
+        postPage.clickOnMyPostsTumbler();
+        postPage.openFirstPost();
+        editPostPage.clickOnDeleteButton();
+        postPage.clickOnMyPostsTumbler();
+        postPage.checkTextInTitles();
+    }
+
 
 }
