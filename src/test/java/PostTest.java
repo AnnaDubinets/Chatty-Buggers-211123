@@ -123,7 +123,7 @@ public class PostTest extends BaseTest{
         loginPage.followLoginButton();
         postPage.clickOnCreateButton();
         sleep(3000);
-        postPage.enterTitlePost("Good vibes");
+        postPage.enterTitlePost("Good vibes3");
         postPage.enterDescriptionPost("Summer is upon us! It’s time to beat!");
         postPage.enterContentPost("My thoughts, no more than 1000 symbols");
         sleep(3000);
@@ -133,7 +133,9 @@ public class PostTest extends BaseTest{
         sleep(3000);
         postPage.clickOnMyDrafts();
         sleep(3000);
-        draftsPage.draftPostTitleCheck("Good vibes");
+        draftsPage.draftPostTitleCheck("Good vibes3");
+        postPage.checkDraftPostTitleInDisplayedPosts();//it s a bug, the draft post should not be displayed on posts feed
+
     }
 
     @Test

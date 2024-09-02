@@ -200,6 +200,24 @@ public class PostPage {
             System.out.println("There is element with text");
         }
     }
+
+    public void checkDraftPostTitleInDisplayedPosts() {
+        boolean notContainsText = true;
+        for(SelenideElement postTitle:postsTitles){
+            if (postTitle.getText().contains("Good vibes3")){
+                notContainsText = false;
+                break;
+            }
+        }
+        //return notContainsText;
+        if (notContainsText){
+            System.out.println("There is no element with text: Good vibes3 ");
+
+        }
+        else {
+            System.out.println("There is element with text: Good vibes3");
+        }
+    }
 }
 
 
