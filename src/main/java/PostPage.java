@@ -1,5 +1,6 @@
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 
 import java.io.File;
 import java.util.List;
@@ -47,7 +48,7 @@ public class PostPage {
     private SelenideElement myProfileButton = $("[href=\"/userprofile\"]");
 
     private SelenideElement errorTextFormatImage = $("[class=\"post_error_message__FQTrb\"]");
-    private SelenideElement firstPostTitle = $("//*[@id=\"root\"]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[2]/h3");
+    private SelenideElement firstPostTitle = $(By.xpath("/html/body/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[2]/h3"));
 
 
     public void clickOnCreateButton(){
@@ -185,18 +186,18 @@ public class PostPage {
     public void checkTextInTitles() {
         boolean notContainsText = true;
         for(SelenideElement postTitle:postsTitles){
-            if (postTitle.getText().contains("Summer nights")){
+            if (postTitle.getText().contains("My project 2")){
                 notContainsText = false;
                 break;
             }
         }
         //return notContainsText;
         if (notContainsText){
-            System.out.println("There is element with text: Summer nights ");
+            System.out.println("There is no element with text: My project 2 ");
 
         }
         else {
-            System.out.println("There is no element with text");
+            System.out.println("There is element with text");
         }
     }
 }

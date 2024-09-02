@@ -185,11 +185,13 @@ public class PostTest extends BaseTest{
         loginPage.enterPassword("qwerty07");
         loginPage.followLoginButton();
         sleep(3000);
+        postPage.clickOnCreateButton();
+        postPage.enterTitlePost("My project 2");
+        postPage.enterDescriptionPost("Summer is upon us! like this month’s book selection, A Cat and a Dog, written by Claire Masurel;");
+        postPage.enterContentPost(" how i wrote my first project");
+        postPage.clickOnSubmitButton();
         postPage.clickOnMyPostsTumbler();
         sleep(3000);
-        postPage.openFirstPost();
-        editPostPage.clickOnDeleteButton();
-        postPage.clickOnMyPostsTumbler();
         postPage.openFirstPost();
         editPostPage.clickOnDeleteButton();
         postPage.clickOnMyPostsTumbler();
