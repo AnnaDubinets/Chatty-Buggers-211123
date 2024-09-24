@@ -24,7 +24,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.clickOnRegistrationButton();
-
+        postPage.userHeaderText("Hello, anna85! ▼");
     }
 
     @Test
@@ -34,6 +34,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("susan970");
         registrationPage.clickOnRegistrationButton();
+        registrationPage.errorTextInvalidEmail("Incorrect email format");
     }
 
     @Test
@@ -42,7 +43,8 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
-        registrationPage.clickOnRegistrationButton();
+        registrationPage.errorTextInvalidEmail("Email cannot be empty");
+
     }
 
     @Test
@@ -52,7 +54,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("anna78@gmail.com");
         registrationPage.enterPasswordValue("an970");
         registrationPage.enterConfirmPasswordValue("an970");
-        registrationPage.clickOnRegistrationButton();
+        registrationPage.passwordErrorTest("Password must be 8-100 characters and include at least one letter and one digit\n");
 
     }
     @Test
@@ -62,26 +64,23 @@ public class RegistrationTest extends BaseTest {
         registrationPage.enterEmailValue("anna78@gmail.com");
         registrationPage.enterPasswordValue("");
         registrationPage.enterConfirmPasswordValue("an970");
-        registrationPage.clickOnRegistrationButton();
+        registrationPage.passwordErrorTest("Password cannot be empty\n");
 
     }
 
     @Test
     public void invalidUsernameLessThanThree(){
-
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("an");
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
-        registrationPage.clickOnRegistrationButton();
-
+        registrationPage.errorText("Incorrect email format");
     }
 
     @Test
     public void invalidUserNameMore20(){
         loginPage.followSignUpLink();
         registrationPage.enterEmailValue("annaanna970annaanna970annaanna970");
-
         registrationPage.enterPasswordValue("annaanna970");
         registrationPage.enterConfirmPasswordValue("annaanna970");
         registrationPage.errorText("Incorrect email format");

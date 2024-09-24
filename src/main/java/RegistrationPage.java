@@ -22,7 +22,7 @@ public class RegistrationPage {
     private SelenideElement emailErrorText = $("[class=\"text-error\"]");
 
 
-
+    private SelenideElement passwordErrorText = $("[class=\"text-error\"]");
 
 
 
@@ -56,7 +56,14 @@ public class RegistrationPage {
     }
 
 
+    public void errorTextInvalidEmail(String expectedText){
+        emailErrorText.shouldHave(text(expectedText));
+    }
 
 
+    public void passwordErrorTest(String expectedText){
+        passwordErrorText.shouldHave(text(expectedText));
+    }
 }
+
 
