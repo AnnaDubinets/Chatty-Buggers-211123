@@ -20,7 +20,6 @@ public class LoginTest extends BaseTest {
     public void invalidUserName(){
         loginPage.enterEmail("johnsmith-!");
         loginPage.enterPassword("qwerty07");
-        loginPage.followLoginButton();
         loginPage.wrongEmailErrorTextCheck("Incorrect email");
     }
 
@@ -28,8 +27,7 @@ public class LoginTest extends BaseTest {
     public void invalidPassword(){
         loginPage.enterEmail("johnsmith@gmail.com");
         loginPage.enterPassword("qwerty099");
-        loginPage.followLoginButton();
-        sleep(8000);
+
     }
 
     @Test
